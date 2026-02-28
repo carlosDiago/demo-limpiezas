@@ -29,10 +29,10 @@
             <div class="nav-links">
                 <a href="#servicios">Servicios</a>
                 <a href="#nosotros">Por qué elegirnos</a>
+                <a href="#presupuesto">Presupuesto</a>
                 <a href="#contacto">Contacto</a>
             </div>
-            <a href="https://wa.me/34699763020?text=Hola,%20me%20gustar%C3%ADa%20pedir%20presupuesto" target="_blank"
-                class="btn btn-outline" style="padding: 10px 20px;">Presupuesto</a>
+            <a href="#presupuesto" class="btn btn-outline" style="padding: 10px 20px;">Pedir Presupuesto</a>
             <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
         </div>
     </nav>
@@ -147,6 +147,63 @@
         </div>
     </section>
 
+    <!-- Presupuesto Form Section -->
+    <section id="presupuesto" class="section bg-light">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="section-title">Calcula tu Presupuesto</h2>
+                <p class="section-subtitle">Déjanos los detalles de tu espacio y nos pondremos en contacto contigo en
+                    tiempo récord con una propuesta personalizada.</p>
+            </div>
+
+            <div class="quote-form-container reveal">
+                <form id="quoteForm" class="quote-form">
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="serviceType">Tipo de Servicio <span class="required">*</span></label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="" disabled selected>Selecciona un servicio...</option>
+                                <option value="pisos">Pisos y Chalets</option>
+                                <option value="comunidades">Comunidades de Vecinos</option>
+                                <option value="oficinas">Oficinas y Locales</option>
+                                <option value="obra">Limpieza de Fin de Obra</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sqMeters">Metros Cuadrados Superficie <span class="required">*</span></label>
+                            <input type="number" id="sqMeters" name="sqMeters" placeholder="Ej: 120" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="fullName">Nombre Completo <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono de Contacto <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+34 600..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Detalles adicionales (Opcional)</label>
+                        <textarea id="notes" name="notes" rows="3"
+                            placeholder="Particularidades, horarios de preferencia, etc..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Solicitar Presupuesto Gratuito</button>
+                    <p class="form-disclaimer">Tus datos están seguros. No enviamos spam.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Trust / Final CTA Banner -->
     <section class="trust-banner reveal">
         <div class="container">
@@ -186,29 +243,28 @@
         </div>
     </footer>
 
+    <!-- Modal Confimacion Presupuesto -->
+    <div id="successModal" class="modal">
+        <div class="modal-content text-center">
+            <button class="close-modal">&times;</button>
+            <div class="modal-icon-wrapper">
+                <i class="fa-solid fa-check-circle modal-icon"></i>
+            </div>
+            <h3>¡Solicitud Recibida!</h3>
+            <p>En breve recibirá su presupuesto.</p>
+            <p><strong>Estamos estudiando sus necesidades para darle el mejor servicio posible.</strong></p>
+            <button class="btn btn-primary close-modal-btn" style="margin-top: 20px;">Entendido</button>
+        </div>
+    </div>
+
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/34699763020?text=Hola,%20quisiera%20pedir%20presupuesto" class="whatsapp-float"
         target="_blank" rel="noopener noreferrer" title="Contáctanos por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Simple Interactivity -->
-    <script>
-        // Scroll Reveal
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on load
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 
 </html>
