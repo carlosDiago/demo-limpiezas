@@ -104,16 +104,14 @@ nav {
 }
 
 .brand {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--brand-primary);
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-.brand i {
-    color: var(--brand-accent);
+.brand-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -375,10 +373,11 @@ footer {
     margin-bottom: 40px;
 }
 
-.footer-brand h3 {
-    font-size: 1.8rem;
-    color: var(--brand-primary);
-    margin-bottom: 15px;
+.footer-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .footer-brand p {
